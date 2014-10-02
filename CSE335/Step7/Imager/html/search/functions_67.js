@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['gaussianfilter',['GaussianFilter',['../class_c_base_canny.html#aa2e74784721a84f6723d4a9df7db17c3',1,'CBaseCanny::GaussianFilter()'],['../class_c_canny.html#a27471f807cd431bf060b7f91b769a9e9',1,'CCanny::GaussianFilter()']]],
+  ['get',['Get',['../class_c_array2_d.html#a2ccf8770b501f9b0f5f0c437a444037b',1,'CArray2D']]],
+  ['getangle',['GetAngle',['../class_c_moments.html#af39ca9d987aed5c6aa51f3f748f00741',1,'CMoments']]],
+  ['getdocument',['GetDocument',['../class_c_document_observer.html#acb111a898632fd35cab178f523880fc4',1,'CDocumentObserver::GetDocument()'],['../class_c_frame.html#afb3affdbba114069a9cf6717dbbb4ed7',1,'CFrame::GetDocument()']]],
+  ['getfilename',['GetFilename',['../class_c_picture.html#acc1629096ff529e39189aee5de52cc7d',1,'CPicture::GetFilename()'],['../class_c_processor.html#a0d7a95e9843da59f3cce467563a7bad3',1,'CProcessor::GetFilename()']]],
+  ['getheight',['GetHeight',['../class_c_picture.html#a7dbeed2882e2247216aa927c3573af4d',1,'CPicture::GetHeight()'],['../class_c_processor.html#ac547f54e99af15062a4379a5abb6f3da',1,'CProcessor::GetHeight()']]],
+  ['gethit',['GetHit',['../class_c_array2_d.html#a0bf61e481becc46d5f9a43089e75e081',1,'CArray2D']]],
+  ['getid',['GetId',['../class_c_id_dlg.html#ad27e725db4e085dfe75294a961c9af95',1,'CIdDlg']]],
+  ['getimage',['GetImage',['../class_c_picture.html#a62080949e8454fdd2fe69d50efe450e3',1,'CPicture']]],
+  ['getlength',['GetLength',['../class_c_moments.html#a35e6b10ee6accfe9c7aedd190474a98b',1,'CMoments']]],
+  ['getmono',['GetMono',['../class_c_processor.html#a5c107d2e68e1661106e31bd1e8d86786',1,'CProcessor']]],
+  ['getprocessedimage',['GetProcessedImage',['../class_c_processor.html#a1e8b8bb9060fa3474db59716ff685ba5',1,'CProcessor']]],
+  ['getprogress',['GetProgress',['../class_c_progress_ctrl.html#a7489ab9095d624ff3bc3323b352daa02',1,'CProgressCtrl']]],
+  ['getrgb',['GetRGB',['../class_c_picture.html#adda380b96e6550d576ddc3220ba4a1ff',1,'CPicture::GetRGB()'],['../class_c_processor.html#ad1ab3fb6613c563dd03f7c66d6d7d357',1,'CProcessor::GetRGB()']]],
+  ['getsize',['GetSize',['../class_c_picture.html#a4d2d1744fde899b1f9a79a52de515920',1,'CPicture']]],
+  ['getwid',['GetWid',['../class_c_array2_d.html#aa1d6beb9cbb553ad186cdab43381f0f8',1,'CArray2D']]],
+  ['getwidth',['GetWidth',['../class_c_moments.html#a8f74810ad0d9729a1c8bd7ab0c789ce5',1,'CMoments::GetWidth()'],['../class_c_picture.html#a8e8d3a93a01567733ef862deb28fdaa0',1,'CPicture::GetWidth()'],['../class_c_processor.html#ae6866355ec1cb10bdbe8dbb1176dd1c0',1,'CProcessor::GetWidth()']]],
+  ['getxcentroid',['GetXCentroid',['../class_c_moments.html#a0520e15caf57eee2e3c2bd3496e029b7',1,'CMoments']]],
+  ['getycentroid',['GetYCentroid',['../class_c_moments.html#a6d6e6a287fd94f792637e9eeb444ba73',1,'CMoments']]],
+  ['getzoom',['GetZoom',['../class_c_view_edit.html#a74044d4403b536d6c369a6f70de86621',1,'CViewEdit']]]
+];

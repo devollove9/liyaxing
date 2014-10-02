@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['carray2d',['CArray2D',['../class_c_array2_d.html#a30988153a6bd21b576082288ef115cdb',1,'CArray2D::CArray2D()'],['../class_c_array2_d.html#aa1e0b3d95e3db4b89c3721ec0a0f538d',1,'CArray2D::CArray2D(int wid, int hit)'],['../class_c_array2_d.html#a986fa3c2f605e5cd117380e4109b563c',1,'CArray2D::CArray2D(const CArray2D&lt; T &gt; &amp;)']]],
+  ['cbaseblackandwhite',['CBaseBlackAndWhite',['../class_c_base_black_and_white.html#ac2203133914be2bda181ce09afedb7ac',1,'CBaseBlackAndWhite']]],
+  ['cbasecanny',['CBaseCanny',['../class_c_base_canny.html#a745fcda9f6ee7fbd8c5c56deb54d9adb',1,'CBaseCanny']]],
+  ['cbaseemboss',['CBaseEmboss',['../class_c_base_emboss.html#ad8436609fe523071d27a31339c1a45e3',1,'CBaseEmboss']]],
+  ['cbenchmarkdlg',['CBenchmarkDlg',['../class_c_benchmark_dlg.html#a3f606a41005a09aa7a7c555ca161cdde',1,'CBenchmarkDlg']]],
+  ['cblackandwhite',['CBlackAndWhite',['../class_c_black_and_white.html#af450894a6a79506ff3572c6b120b4195',1,'CBlackAndWhite']]],
+  ['ccanny',['CCanny',['../class_c_canny.html#ab5725b95f85c41b30f1231953184de37',1,'CCanny']]],
+  ['cdocument',['CDocument',['../class_c_document.html#a42288f208b263aa5710bd4dfc4403ace',1,'CDocument::CDocument()'],['../class_c_document.html#a6cff2f53076b48a539430034c448a8d4',1,'CDocument::CDocument(const CDocument &amp;)']]],
+  ['cdocumentobserver',['CDocumentObserver',['../class_c_document_observer.html#aace5a74315dc3f2bb4a297edc9aed914',1,'CDocumentObserver::CDocumentObserver(CDocument *document)'],['../class_c_document_observer.html#abeeb78f9ca57fcdc5c4dff37886b04fb',1,'CDocumentObserver::CDocumentObserver()'],['../class_c_document_observer.html#a12b490228c247746e4cb2ebdb99d3ba8',1,'CDocumentObserver::CDocumentObserver(const CDocumentObserver &amp;)']]],
+  ['cemboss',['CEmboss',['../class_c_emboss.html#a7366d219b692bf6c0a0592711200374e',1,'CEmboss']]],
+  ['cframe',['CFrame',['../class_c_frame.html#af0e3dd238c2ea178e71889d1c0c5a386',1,'CFrame']]],
+  ['ciddlg',['CIdDlg',['../class_c_id_dlg.html#a26d7278fc8425d6521c138208d8e1a8d',1,'CIdDlg']]],
+  ['clear',['Clear',['../class_c_array2_d.html#a699bc3e8c74b2179d4d0aad093ad9ec3',1,'CArray2D::Clear()'],['../class_c_picture.html#ad69c8d0a3b1e7e0025acc557cd0acdb7',1,'CPicture::Clear()']]],
+  ['cmoments',['CMoments',['../class_c_moments.html#a29c19c0bfe2f4de80f4d6befd1218034',1,'CMoments']]],
+  ['cmomentsdlg',['CMomentsDlg',['../class_c_moments_dlg.html#ae8e35d9c44cc5bb0d742e79a57d32d55',1,'CMomentsDlg']]],
+  ['compare',['Compare',['../class_c_picture.html#a825ce4e6613bfd84056634ad63d1740d',1,'CPicture']]],
+  ['computegaussiankernel',['ComputeGaussianKernel',['../class_c_base_canny.html#a40df0e88e55f5df0283579b14140ed16',1,'CBaseCanny::ComputeGaussianKernel()'],['../class_c_canny.html#afafe4917b43076b2e9a82876c961d75a',1,'CCanny::ComputeGaussianKernel()']]],
+  ['cpicture',['CPicture',['../class_c_picture.html#a4e3783bef1f9d565b8a9f5e9680685ab',1,'CPicture']]],
+  ['cprocessingdlg',['CProcessingDlg',['../class_c_processing_dlg.html#a88906bc768030489f57b519eb5cb85a6',1,'CProcessingDlg']]],
+  ['cprocessor',['CProcessor',['../class_c_processor.html#aafa0b861b166f1e6fd78508f9f934ab8',1,'CProcessor::CProcessor(const CPicture *picture)'],['../class_c_processor.html#a87e4f8a57ada8d15cc45f5e7f0164a3d',1,'CProcessor::CProcessor()'],['../class_c_processor.html#a457bba48f97badf0347526a8a4e9fdfc',1,'CProcessor::CProcessor(const CProcessor &amp;)']]],
+  ['cprogressctrl',['CProgressCtrl',['../class_c_progress_ctrl.html#a2703af7cd02a1aad0ff29e6d075a6f4b',1,'CProgressCtrl']]],
+  ['create',['Create',['../class_c_picture.html#a54e74a3366843098dbe39daac4a69588',1,'CPicture']]],
+  ['ctestdlg',['CTestDlg',['../class_c_test_dlg.html#a78b60eb07fda77f03595cc8426a8d0e2',1,'CTestDlg']]],
+  ['cviewedit',['CViewEdit',['../class_c_view_edit.html#af8492ef7a5da73ef6490600edc5e8a67',1,'CViewEdit']]]
+];
