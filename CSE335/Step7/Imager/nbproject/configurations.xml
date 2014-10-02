@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>CApp.cpp</itemPath>
+    <itemPath>CApp.h</itemPath>
+    <itemPath>CArray2D.h</itemPath>
+    <itemPath>CBaseBlackAndWhite.cpp</itemPath>
+    <itemPath>CBaseBlackAndWhite.h</itemPath>
+    <itemPath>CBaseCanny.cpp</itemPath>
+    <itemPath>CBaseCanny.h</itemPath>
+    <itemPath>CBaseEmboss.cpp</itemPath>
+    <itemPath>CBaseEmboss.h</itemPath>
+    <itemPath>CBenchmarkDlg.cpp</itemPath>
+    <itemPath>CBenchmarkDlg.h</itemPath>
+    <itemPath>CBlackAndWhite.cpp</itemPath>
+    <itemPath>CBlackAndWhite.h</itemPath>
+    <itemPath>CCanny.cpp</itemPath>
+    <itemPath>CCanny.h</itemPath>
+    <itemPath>CDocument.cpp</itemPath>
+    <itemPath>CDocument.h</itemPath>
+    <itemPath>CDocumentObserver.cpp</itemPath>
+    <itemPath>CDocumentObserver.h</itemPath>
+    <itemPath>CEmboss.cpp</itemPath>
+    <itemPath>CEmboss.h</itemPath>
+    <itemPath>CFrame.cpp</itemPath>
+    <itemPath>CFrame.h</itemPath>
+    <itemPath>CIdDlg.cpp</itemPath>
+    <itemPath>CIdDlg.h</itemPath>
+    <itemPath>CMoments.cpp</itemPath>
+    <itemPath>CMoments.h</itemPath>
+    <itemPath>CMomentsDlg.cpp</itemPath>
+    <itemPath>CMomentsDlg.h</itemPath>
+    <itemPath>CPicture.cpp</itemPath>
+    <itemPath>CPicture.h</itemPath>
+    <itemPath>CProcessingDlg.cpp</itemPath>
+    <itemPath>CProcessingDlg.h</itemPath>
+    <itemPath>CProcessor.cpp</itemPath>
+    <itemPath>CProcessor.h</itemPath>
+    <itemPath>CProgressCtrl.cpp</itemPath>
+    <itemPath>CProgressCtrl.h</itemPath>
+    <itemPath>CSpeech.h</itemPath>
+    <itemPath>CTestDlg.cpp</itemPath>
+    <itemPath>CTestDlg.h</itemPath>
+    <itemPath>CViewEdit.cpp</itemPath>
+    <itemPath>CViewEdit.h</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandLine>`wx-config --cppflags` -fopenmp</commandLine>
+        </ccTool>
+        <linkerTool>
+          <commandLine>`wx-config --libs` -fopenmp</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="CApp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CApp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CArray2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseBlackAndWhite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseBlackAndWhite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseCanny.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseCanny.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseEmboss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseEmboss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBenchmarkDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBenchmarkDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBlackAndWhite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBlackAndWhite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CCanny.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CCanny.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CDocument.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CDocumentObserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CDocumentObserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CEmboss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CEmboss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CIdDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CIdDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CMoments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CMoments.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CMomentsDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CMomentsDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CPicture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CPicture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProcessingDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProcessingDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProcessor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProcessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProgressCtrl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProgressCtrl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CSpeech.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CTestDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CTestDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CViewEdit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CViewEdit.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="CApp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CApp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CArray2D.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseBlackAndWhite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseBlackAndWhite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseCanny.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseCanny.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBaseEmboss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBaseEmboss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBenchmarkDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBenchmarkDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CBlackAndWhite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CBlackAndWhite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CCanny.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CCanny.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CDocument.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CDocumentObserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CDocumentObserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CEmboss.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CEmboss.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CIdDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CIdDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CMoments.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CMoments.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CMomentsDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CMomentsDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CPicture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CPicture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProcessingDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProcessingDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProcessor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProcessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CProgressCtrl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CProgressCtrl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CSpeech.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CTestDlg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CTestDlg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CViewEdit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CViewEdit.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
