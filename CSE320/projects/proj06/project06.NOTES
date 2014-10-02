@@ -1,0 +1,116 @@
+
+Notes on Computer Project #6
+----------------------------
+
+Comments about the assignment and responses to frequently asked questions will
+be added to this file as necessary.
+
+***** comments added on 02/18/13 *****
+
+1) Please note the following statement from the assignment handout:
+
+  The deliverables for this assignment are:
+
+    proj06.makefile  -- the makefile which produces "proj06"
+    proj06.support.c -- the source code for your support module
+    proj06.driver.c  -- the source code for your driver module
+    proj06.tests     -- the input to your driver, if needed
+
+  Be sure to submit your files for grading via the "handin" program.
+
+It is possible to submit your solution files multiple times:  the last files
+that you submit will be graded.
+
+2) Please note that you are required to create a makefile which controls the
+translation of your program, and that the name of your executable file must be
+"proj06".
+
+3) For your convenience, I have supplied the following file:
+
+  ~cse320/Projects/project06.support.h
+
+That file contains declarations of the nine functions that are required in
+your support module, as well as the declaration of "union dp_item".
+
+Since that file may not be modified, there is no reason to copy it into your
+account.  Instead, use its absolute pathname in the appropriate preprocessor
+directive.  For example:
+
+  #include "/user/cse320/Projects/project06.support.h"
+
+Any program which uses those functions should contain the appropriate
+preprocessor directive.
+
+4) An example program which illustrates the use of "union dp_item" is
+available on the system as:
+
+  ~cse320/Projects/project06.example1.c
+
+You may wish to review the source code and comments in that file.
+
+5) A second example program is also available:
+
+  ~cse320/Projects/project06.example2.c
+
+That program illustrates the use of masking and shifting operations, as well
+as several formatting specifications for "printf".
+
+6) Please note the following from the assignment handout:
+
+  Those nine functions (and any associated "helper" functions which you
+  develop) will constitute a module named "proj06.support.c".  The functions
+  in that module will not use any floating point operations, and they will not
+  call any C library functions.  There are two exceptions:  any of the
+  functions may use the assignment operation to copy a floating point value
+  from one variable to another, and function "display" may call "printf".
+
+Since the argument to each of the functions is an object of type "double",
+you would be wise to use an object of type "dp_item" to make a copy of the
+argument.  For example:
+
+  int is_negative( double Param )
+  {
+    union dp_item Value;
+    Value.drep = Param;
+
+    // Manipulate "Value.irep" 
+  }
+
+After assigning the argument into the "drep" field, you can then operate on
+the "irep" field as a 64-bit unsigned integer.
+
+7) Please note that it is perfectly acceptable to use data objects of type
+"union dp_item" in your driver module.  Using that approach, you can create
+test cases which have specific bit patterns by assigning hexadecimal constants
+to the "irep" version of an object.  The "drep" version of that object can
+then be passed as an argument to one or more of the functions in your support
+module.
+
+8) Be careful about terminology.  A 64-bit double precision floating point
+value is divided into three fields:
+
+  sign -- 1 bit
+  biased exponent -- 11 bits
+  fraction -- 52 bits
+
+Recall that the fraction field does not contain the "hidden bit" or the binary
+point -- those two pieces of information are implied.
+
+The term "significand" is used when those two pieces of information are made
+explicit.  For example, consider the following double precision floating point
+value (given in hexadecimal):
+
+  C058E00000000000
+
+The fraction field (given in hexadecimal):
+
+  8E00000000000
+
+The significand (given in hexadecimal):
+
+  1.8E00000000000
+
+Please note that the hidden bit is a 0 for zero and denormal numbers.
+
+--M. McCullen
+

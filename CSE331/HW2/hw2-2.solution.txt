@@ -1,0 +1,4 @@
+7.2 O(N) because the while loop terminates immediately. Of course, accidentally changing the test to include equalities raises the running time to quadratic for this type of input.
+
+O(N): 2 pts
+reasoning: 3 pts. 

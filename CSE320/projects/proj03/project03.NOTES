@@ -1,0 +1,118 @@
+
+Notes on Computer Project #3
+----------------------------
+
+Comments about the assignment and responses to frequently asked questions will
+be added to this file as necessary.
+
+***** comments added on 01/16/13 *****
+
+1) Please note the following statement from the assignment handout:
+
+  The deliverable for this assignment is:
+
+    proj03.netlist.c  -- the implementation file for your solution
+
+  Be sure to use the specified file name, and to submit your file for grading
+  via the "handin" program.
+
+It is possible to submit your solution files multiple times:  the last files
+that you submit will be graded.
+
+2) Please note that you are developing the combinational logic to generate the
+correct signals that could be used as inputs to an LED component, not the LED
+component itself.
+
+That is, you are developing the eight functions that produce a "present"
+signal and the seven signals associated with the seven segments of an LED.
+
+If the "sim" package contained an LED component (which it does not), you would
+connect the eight output signals from your circuit to the eight inputs of that
+LED component.
+
+Since "sim" does not contain an LED component, you will examine the output
+signals of your circuit using eight probes.  To generate the four bits of
+input required by your circuit, you will use a counter and pulsers.  From the
+project handout:
+
+  Function "simnet" will serve as a test fixture which allows the user to
+  produce hexadecimal digits and observe the resulting outputs.  The input
+  will be generated using a four-bit counter (controlled by pulsers), and the
+  results will be displayed using eight probes.
+
+  The pulsers used in conjunction with the four-bit counter will be placed
+  vertically on the left edge of the "sim" window.
+
+  The eight probes will be placed near the right edge of the "sim" window.
+  The "Present" probe will be placed at the top of the "sim" window, while the
+  probes for the other seven functions ("a", "b", and so on) will be placed
+  below the "Present" probe in the same pattern used by a seven-segment
+  display:
+
+      +----+
+      +----+
+    +-+    +-+
+    | |    | |
+    +-+    +-+
+      +----+
+      +----+
+    +-+    +-+
+    | |    | |
+    +-+    +-+
+      +----+
+      +----+
+
+  All pulsers and probes will be appropriately labeled in the "sim" window.
+
+Thus, the output produced by "sim" will be a pattern of "off" and "on" values
+on the eight probes, where seven of the probes are arranged in a pattern
+similar to a seven-segment display component.
+
+3) A counter is a sequential circuit which uses flip-flops to retain the
+current state (value in the count sequence); it moves to the next state (next
+value in the count sequence) when the counter is strobed.  It always outputs
+the current state.
+
+A pulser is used to generate a temporary value of "One" on a specified signal
+line (signal value:  Zero ==> One ==> Zero).
+
+The file "~cse320/Labs/lab04.counter.c" contains a C++ module which is a test
+bed for experimenting with the "Counter" and "Pulser" components.
+
+4) Please note the following statement from the assignment handout:
+
+  Your implementation will be formalized by creating a C++ source code file
+  which represents the minimized version of each function in your circuit and
+  serves as input to the "sim" package.
+
+That is, your circuit must contain eight functions which match the eight
+minimized functions in your design document, and those functions must be
+constructed out of gates from the set {NOT, AND, OR}.
+
+You should not use XOR gates, decoders, or other components which do not
+correspond to the operations in the minimized functions in your design
+document.
+
+5) There are several features of "sim" illustrated in the self-study modules
+which might be useful for this project.
+
+For example, the constant signals "Zero" (false) and "One" (true) are defined
+in the "Sim.h" interface file.
+
+Also, "composition" (with parentheses and commas) can be used to group signals
+into larger units.
+
+Consider the following statement:
+
+  Mux (SD("2b-4b"), (C1, C0), (One, D2, D1, D0), MuxOut);
+    
+The notation "(C1, C0)" forms a two-bit signal and the notation "(One, D2, D1,
+D0)" forms a four-bit signal (where the most significant bit is always
+asserted).
+
+Please note that composition can be also used for output signals.  Assuming
+that "w", "x", "y" and "z" are one-bit signals, then "(w, x, y, z)" could
+serve as the output of a four-bit counter.
+
+--M. McCullen
+

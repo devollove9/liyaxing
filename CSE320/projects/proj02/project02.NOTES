@@ -1,0 +1,55 @@
+
+Notes on Computer Project #2
+----------------------------
+
+Comments about the assignment and responses to frequently asked questions will
+be added to this file as necessary.
+
+***** comments added on 09/16/13 *****
+
+1) Please note the following statement from the assignment handout:
+
+  The deliverable for this assignment is:
+
+    proj02.design -- the text file for your design
+
+  Be sure to use the specified file name, and to submit your file for grading
+  via the "handin" program.
+
+It is possible to submit your solution files multiple times:  the last files
+that you submit will be graded.
+
+2) Note that you are only designing the eight circuits for this project.  In
+Computer Project #3, you will implement and test your circuits using the "sim"
+package.
+
+3) The minimized expressions for your eight functions must be given in sum of
+products form.  That is, each function must be expressed using one or more
+products (AND terms), and at most one sum (OR term).
+
+The following are all examples of functions in sum of products form:
+
+  a() = AB' + AC + A'BC'
+  b() = A + BC
+  c() = ABC'
+  d() = B
+
+In contrast, the following functions are not in sum of products form:
+
+  e() = AB + C(D+E)
+  f() = (A+B)'
+
+Please note that both of those functions can be expressed in sum of products
+form:
+
+  e() = AB + CD + CE
+  f() = A'B'
+
+A minimized function which is given in sum of products form is desirable for
+several reasons:  it corresponds closely to the original formulation of the
+unminimized function (the truth table or minterm canonical form), and it can
+be implemented using "two-level logic" (AND gates, followed by a single OR
+gate).
+
+--M. McCullen
+

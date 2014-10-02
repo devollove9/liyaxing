@@ -1,0 +1,56 @@
+Problem 1.
+
+	By the definition of a heap, all the tree levels are completely filled except possibly for the lowest level, which is filled from the left up to a point. Clearly a heap of height h has the minimum number of elements when it has just one node at the lowest level. Hence the minimum number of nodes possible in a heap of height  h is 2^h. Clearly a heap of height h, has the maximum number of elements when its lowest level is completely filled. In this case the heap is a complete binary tree of height h and hence has 2^(h+1) -1 nodes.
+	
+	So, we have 2^h <= n <= 2^(h+1)-1 where n is the total number of elements in this heap.
+	Thus, we have 2^h <= n <= 2^(h+1)
+	
+	Taking logarithms to the base 2,
+	
+	h  <=  lgn  <=  h +1
+	
+	It follows that h =  lgn.
+	
+	Grading: give 4 pts if 2^h <= n <= 2^(h+1)-1 is derived. Give 2 pts if only an example or several examples are shown.
+
+Problem 2.
+	{2 3 7 4 9 8 15 13 10}
+	{10 3 7 4 9 8 15 13}
+	{3 10 7 4 9 8 15 13}
+	{3 4 7 10 9 8 15 13}
+	
+Problem 3.
+	{2 3 7 4 9 8 15 13 10 1*}
+	{2 3 7 4 1* 8 15 13 10 9}
+	{2 1* 7 4 3 8 15 13 10 9}
+	{1* 2 7 4 3 8 15 13 10 9}
+	
+
+Problem 4.
+	The main idea is to use a heap to findMIN for all the head elements in the sorted list. Recall that in mergesort, you need to choose the minimum number from the current items from all sorted list. Thus, heap can be used for this task. So, you should only have k items in your heap (k is the number of sorted lists).
+	
+	Input: [0,1,3], [4], [2,5]
+	
+	Build a heap A for the first elements [0,4,2] of all three lists. 
+	
+	BuildHeap([0,4,2]) => A=[0,4,2].
+	
+	ExtractMIN(A) => A=[2,4]. After this step, the pointer to the first sorted list increases by 1. So it points to 1.
+	Insert(A, 1) => A=[1,4,2].
+	
+	ExtractMIN(A) => A=[2,4]. After this step, the pointer to the first sorted 
+	list increases by 1. 
+	
+	Insert(A, 3) => A=[2,4,3].
+	ExtractMIN(A) => A=[3,4]. After this step, the pointer to the third sorted list increases by 1.
+	
+	Insert(A, 5) = > A=[3,4,5].
+	
+	ExtractMIN(A) => A=[4,5]. After this step, the first sorted list is done. 
+	ExtractMIN(A)=> A=[5].    After this step, the second sorted list is done.
+	Note that the final merged list contains all the output of ExtractMIN().
+	
+	Grading, part A 10 pts. Part B 5 pts. As long as you give the correct idea about what elements you use to build the heap, you get at least 9 pts for part A. 
+
+Problem 5. As long as the program can compile and run, give at least 20 pts. If the result is wrong, deduct at most 10 pts.
+

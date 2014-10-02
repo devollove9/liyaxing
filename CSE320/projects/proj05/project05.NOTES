@@ -1,0 +1,191 @@
+
+Notes on Computer Project #5
+----------------------------
+
+Comments about the assignment and responses to frequently asked questions will
+be added to this file as necessary.
+
+***** comments added on 02/11/13 *****
+
+1) Please note the following statement from the assignment handout:
+
+  The deliverables for this assignment are:
+
+    proj05.makefile  -- the makefile which produces "proj05"
+    proj05.support.c -- the source code for your conversion module
+    proj05.driver.c  -- the source code for your driver module
+    proj05.tests     -- the input to your driver module, if needed
+
+  Be sure to submit your files for grading via the "handin" program.
+
+It is possible to submit your solution files multiple times:  the last files
+that you submit will be graded.
+
+2) Please note that you are required to create a makefile which controls the
+translation of your program, and that the name of your executable file must be
+"proj05".
+
+If you're not familiar with "make", please review the information at:
+
+  ~cse320/General/intro.make
+
+That overview of "make" is also available in the course pack.  Additional
+information is available via "man make".
+
+3) Please note the following statement from the assignment handout:
+
+  You will develop a driver module to test your implementation of the
+  conversion module.  The source code for the driver module must be in a
+  separate file.  All output will be appropriately labeled.
+
+  Your driver module will not be interactive.  If it accepts any input, you
+  will supply that input in a text file named "proj05.tests".
+
+An interactive program is one in which the user enters inputs in response to
+prompts.  Since that approach is prohibited for this assignment, your driver
+module will NOT contain code segments such as the following:
+
+  printf ) "Enter an angle in radians:" );
+  scanf( "%f", &AngleRadians );
+
+Instead of prompting the user to enter test cases, there are two approaches
+you may use:
+
+  a) Embed the test cases in the driver module as constants.
+  b) Input the test cases from a text file (without prompting the user).
+
+The first approach (embedding the test cases in the driver module) is the
+preferred approach for this project since it will facilitate incremental
+development of the driver module and the library module.
+
+For example, if you were going to test "sin" (from the math library), you
+might use a series of statements such as:
+
+  printf( "%f\n", sin( 0.0 ) );
+  printf( "%f\n", sin( 0.5 ) );
+  printf( "%f\n", sin( 1.0 ) );
+
+Obviously, that code segment is too crude -- the test cases aren't
+particularly good, and the output isn't labeled or formatted.  However, it
+illustrates the general approach for a driver module which doesn't accept any
+input.
+
+The second approach (inputting the test cases from a text file) can be useful
+in some circumstances, but might be problematic for this project.  If you
+decide to use that approach, you would then use input redirection when you
+executed your program:
+
+  <prompt> a.out < proj05.tests
+
+Regardless of which of the two methods you use to develop your driver module,
+note that your test cases will be available when your solution is graded since
+they will either be embedded in the driver module or present in "proj05.tests".
+
+4) For your convenience, I have supplied the following file:
+
+  ~cse320/Projects/project05.support.h
+
+That file contains one C statement:  the declaration of function "convert".
+Since a function must be declared before it is used, your driver module should
+contain the statement:
+
+  int convert( int, unsigned, char[], int );
+
+or the statement:
+
+  #include "/user/cse320/Projects/project05.support.h"
+
+To permit the compiler to do as much error checking as possible, your support
+module should also contain one of the two statements above.
+
+Please note that you should not copy "project05.support.h" into your account,
+since you will not be able to submit that file as part of your solution.
+
+5) In general, preprocessor "include" directives should only be used with
+interface files (".h" files), not C source code files (".c" files).
+
+Consider the the following preprocessor directives:
+
+  #include <stdio.h>
+  #include "/user/cse320/Projects/project05.support.h"
+  #include "proj05.support.c"
+
+The first and second directives could appear in your "proj05.driver.c", but
+the third is not appropriate.
+
+6) Make sure that you understand the difference between the value of a
+variable and how that value is represented.
+
+Consider the value twelve.  That value can be represented in a number of
+different ways in mathematics:
+
+  30 base 4
+  14 base 8
+  12 base 10
+  C base 16
+
+Similarly, there are three different literals to represent twelve in C:
+
+  014  /* octal literal */
+  12   /* decimal literal */
+  0xC  /* hexadecimal literal */
+
+The "printf" function is capable of producing octal, decimal and hexadecimal
+representations of a given value.  The twos complement notation cannot be
+directly displayed, but it is easy to generate through shifting and masking
+(the "bitlib" functions).
+
+Consider the following example:
+
+  #include <stdio.h>
+  #include "/user/cse320/lib/bitlib.h"
+
+  int main()
+  {
+    int A;
+
+    A = 12;
+    printf( "A:  %o (base 8)\n",  A );
+    printf( "A:  %d (base 10)\n", A );
+    printf( "A:  %x (base 16)\n", A );
+    printf( "A:  %32s (twos complement)\n", bit32(A) );
+  }
+
+  <prompt> gcc source.c /user/cse320/lib/bitlib.o
+  <prompt> a.out
+
+  A:  14 (base 8)
+  A:  12 (base 10)
+  A:  c (base 16)
+  A:  00000000000000000000000000001100 (twos complement)
+
+Please note that the "%o" and "%x" format specs display integer values as if
+they were of type "unsigned int".  Thus, when "A" is changed to a negative
+value, the output is quite different:
+
+  #include <stdio.h>
+  #include "/user/cse320/lib/bitlib.h"
+
+  int main()
+  {
+    int A;
+
+    A = -17;
+    printf( "A:  %o (base 8)\n",  A );
+    printf( "A:  %d (base 10)\n", A );
+    printf( "A:  %x (base 16)\n", A );
+    printf( "A:  %32s (twos complement)\n", bit32(A) );
+  }
+  
+  A:  37777777757 (base 8)
+  A:  -17 (base 10)
+  A:  ffffffef (base 16)
+  A:  11111111111111111111111111101111 (twos complement)
+
+Summary:  the external representation of an integer value is some series of
+characters used to convey meaning to a human (or a compiler); the internal
+representation of an integer value is a bit pattern which is meaningful in the
+twos complement system.
+
+--M. McCullen
+
