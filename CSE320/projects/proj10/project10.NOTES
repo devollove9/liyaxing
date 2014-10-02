@@ -1,0 +1,236 @@
+
+Notes on Computer Project #10
+-----------------------------
+
+Comments about the assignment and responses to frequently asked questions will
+be added to this file as necessary.
+
+***** comments added on 03/27/13 *****
+
+1) Please note the following statement from the assignment handout:
+
+  The deliverables for this assignment are:
+
+    proj10.makefile  -- the makefile which produces "proj10"
+    proj10.support.s -- the source code for your support module
+
+  Be sure to submit your files for grading via the "handin" program.
+
+It is possible to submit your solution files multiple times:  the last files
+that you submit will be graded.
+
+2) As stated on the assignment handout, you are required to create a makefile
+which controls the translation of your program, and the name of your
+executable file must be "proj10".
+
+Since you must link the instructor-supplied driver module with your support
+module, your makefile must include the appropriate steps to assemble your
+version of "proj10.support.s", as well as link the object code modules.
+
+Do not copy the instructor-supplied driver module into your directory, or your
+makefile will fail when your TA attempts to use it under the "handin" system.
+Instead, use the absolute pathname of the driver module in your makefile.
+
+3) Please note the following suggestion:
+
+  You may wish to create stubs for the required functions, then translate,
+  link and execute the program to explore the behavior of the driver module.
+
+You are strongly encouraged to build your solution incrementally, starting
+with stubs (as suggested above).
+
+4) A couple of definitions about basketball statistics:
+
+A player's total points is defined as the sum of that player's free throws,
+two-point baskets, and three-point baskets, where each type of basket is
+weighted by the appropriate amount (free throws are worth one point each,
+two-point baskets are worth two points each, and three-point baskets are worth
+three points each).
+
+A player's points per game (a real number) is defined as number of points
+divided by number of games played.
+
+A player who has not participated in any games is defined to have zero points
+per game.
+
+5) Be sure that you have the correct layout of both "struct player" and
+"struct table" in memory.  For example, you must account for any bytes of
+padding to keep certain fields aligned on the appropriate byte boundary in
+memory.
+
+6) Note that your program must work correctly for any properly formatted data
+set.  An example of a properly formatted data file is available as:
+
+  /user/cse320/Projects/project10.data
+
+Clearly, you will need to develop several data files to test various aspects
+of your solution, since the simple instructor-supplied data file will not be
+sufficient for all of the cases that you will want to test.
+
+7) Please note that the instructor-supplied driver module does not rely on any
+of your functions to perform its work.  Specifically, it does not use your
+"search" and "insert" functions to build the table of players.
+
+8) Please note the following from the assignment handout:
+
+  The program will use an ordered table to maintain the data set, where each
+  player's jersey number will serve as a unique key to identify that player.
+
+That is, the table is ordered by jersey number, from smallest number to
+largest number.  All operations on the table (such as inserts and deletes)
+should keep the table elements in the proper order.
+
+When you insert a new item, you must keep the table in order.  To do so, you
+need to "open up" a slot in the table at the right place, by moving some
+records down one slot each.
+
+When you delete an item, you also need to keep the table in order.  To do so,
+you need to move some records up one slot each (to write over the top of the
+deleted record).
+
+If you are unable to maintain the table in order, your solution will still be
+worth partial credit.  Under those circumstances, you can take some short
+cuts:  put a new record at the end of the table (for "insert"), and use the
+last record to replace a record being removed (for "delete").  Of course,
+you'll also have to modify your "search" function so that it no longer assumes
+that the table is ordered by key.
+
+To repeat:  for full credit, your solution will maintain the table in order by
+key (jersey number).  Solutions which do not maintain the table in order will
+be evaluated for partial credit.
+
+9) Please note the function prototype below:
+
+  int search( struct table*, unsigned long, struct player** );
+
+The third argument to function "search" is a pointer to a pointer (an address
+where an address can be stored by the function).
+
+Any function which calls function "search" is responsible for allocating four
+bytes of memory and sending the address of that four-byte area of memory as
+the third argument to "search".
+
+Those four bytes can be allocated in the ".data" section (by a ".word" or
+".skip" instruction) or in the run-time stack (by the "save" instruction which
+is the prologue for that function).
+
+Function "search" will then place a value into that four-byte block of memory
+using "st" (that item just happens to be an address).
+
+10) Please note the function prototype below:
+
+  int insert( struct table*, unsigned long, char*, int, int, int, int );
+
+Note that function "insert" accepts seven arguments.  The first six arguments
+are passed in the out/in registers (as usual), but the seventh argument is
+passed in the stack.  From the perspective of "insert", the effective address
+of the seventh argument is %fp+92.
+
+Please recall that the "save" instruction allocates an activation record in
+the run-time stack.  The stack pointer (%sp) points at the top of the current
+activation record, and the frame pointer (%fp) points at the top of the
+previous activation record.  Note that the "restore" instruction deallocates
+the activation record at the top of the stack (the current one).
+
+The number of bytes allocated for an activation record should always be a
+multiple of eight bytes, with a minimum size of 96 bytes.
+
+The 64 bytes at the top of the activation record (%sp+0 to %sp+63) are used
+when there is register window overflow (the system saves the old contents of
+the local and in registers before allowing a different function to use those
+registers).
+
+The next four bytes are used by the compiler (%sp+64 to %sp+67) to handle some
+unusual cases related to returning a "struct" from a function.
+
+The activation record also contains room for the six arguments which are
+normally passed in registers, in case there is a need to have them stored in
+RAM (to print an argument's address, for example).  That requires 24 bytes
+(%sp+68 to %sp+91).
+
+If there are more than six arguments to a function, the calling function puts
+those excess arguments in its own activation record before calling the other
+function.  Thus, the seventh argument is copied into memory after the other
+items in the activation record (%sp+92 to %sp+95).
+
+From the callee's perspective, the seventh argument is in the stack at
+locations %fp+92 to %fp+95, because the callee contains another "save"
+instruction in its prologue to shift the register window and allocate a
+new activation record.
+
+If there are more than seven arguments, the calling function must use a value
+such as -104 or -112 in its "save" instruction, to allocate a larger than
+normal activation record.
+
+Similarly, if a function needs to use the stack to hold local variables
+(automatic variables in C/C++), it should allocate a larger activation
+record.
+
+More information about this topic can be found in Appendix D of the SPARC
+Architecture Manual (which is included in your course pack).
+
+11) Each player's record contains the following field:
+
+  float points_per_game;    /* points per game played */
+
+A player's points per game (a real number) is defined as number of points
+divided by number of games played.
+
+The number of points and the number of games played are integer values, so
+they will have to be converted into floating point values before computing the
+average.  In C, you would do something like:
+
+  average = float(total) / float(games);
+
+Example #29 demonstrates how that can be accomplished.
+
+12) Please recall the definition of a C-style character string:  an array of
+type "char" with a null byte to mark the end of the sequence of characters.
+To copy a character string from one location in memory to another, load a byte
+from the source array and store that byte in the destination array, until you
+have copied all of the characters (including the null byte which marks the end
+of the source string).
+
+13) The system function "memmove" is useful to copy blocks of data from one
+area of memory to another.  For example:
+
+        .global  main
+
+        .section ".text"
+        .align   4
+  main:
+        save     %sp, -112, %sp
+
+        set      pointA, %o0
+        set      pointB, %o1
+        mov      12, %o2
+        call     memmove
+        nop
+
+        set      pointA, %o0
+        set      pointB+11, %o1
+        call     memory
+        nop
+
+        ret
+        restore
+
+        .section ".data"
+        .align   4
+  pointA:
+        .byte    'A'               ! Label
+        .align   4
+        .word    12, 16            ! X and Y coordinates
+  pointB:
+        .byte    'B'               ! Label
+        .align   4
+        .word    19, 14            ! X and Y coordinates
+
+  MEMORY CONTENTS [00021234 to 0002124a]
+    00021234: 42 00 00 00 00 00 00 13 00 00 00 0e 42 00 00 00
+    00021244: 00 00 00 13 00 00 00
+
+More information is available via "man memmove".
+
+--M. McCullen
+

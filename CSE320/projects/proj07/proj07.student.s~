@@ -1,0 +1,101 @@
+	.global main
+        .section ".text"
+        .align 4
+main:
+        save %sp, -96, %sp 
+        set fmt1, %r8           ! First arg -- address of format string
+        call printf             ! Prompt the user to enter a line
+        nop 
+        
+        clr %r16                ! Initialize character count
+        clr %r17                ! Initialize blank count
+loop:   
+        call getchar            ! Read one character (returned in %r8)
+        nop 
+	cmp %r8, -1
+	be end
+
+        inc %r16                ! Increment character count
+
+if:
+        cmp %r8, 0x0A           ! Compare return value to blank
+        bne endif               ! If blank not found, skip increment
+        nop 
+then: 
+        inc %r17                ! Increment blank count
+endif: 
+
+if:
+        cmp %r8, 0x09           ! Compare return value to blank
+        bne endif               ! If blank not found, skip increment
+        nop 
+then: 
+        inc %r18                ! Increment blank count
+endif: 
+        
+
+end:
+        set fmt1, %r8 !
+        mov %r17, %r9 !
+	call printf !
+	nop
+
+	set fmt2, %r8 !
+        mov %r18, %r9 !
+        call printf !
+        nop 
+
+	set fmt3, %r8 !
+        mov %r18, %r9 !
+	call printf !
+	nop
+
+	set fmt4, %r8 !
+        mov %r19, %r9 !
+	call printf !
+	nop
+	
+	set fmt5, %r8 !
+        mov %r20, %r9 !
+	call printf !
+	nop
+
+	set fmt6, %r8 !
+        mov %r21, %r9 !
+	call printf !
+	nop
+
+	set fmt7, %r8 !
+        mov %r22, %r9 !
+	call printf !
+	nop
+
+	set fmt8, %r8 !
+        mov %r23, %r9 !
+	call printf !
+	nop
+
+	set fmt9, %r8 !
+        mov %r24, %r9 !
+	call printf !
+	nop
+        
+	ret
+        restore
+
+
+
+        
+fmt:   .asciz  "\nEnter a line of text: "
+fmt1:   .asciz  "\nThe line containeds %d new line characters\n"
+fmt2:   .asciz  "\nThe line containeds %d white spaces\n"
+fmt3:   .asciz  "\nThe line containeds %d octal digits\n"
+fmt4:   .asciz  "\nThe line containeds %d decimal digits\n"
+fmt5:   .asciz  "\nThe line containeds %d hexdecima digits\n"
+fmt6:   .asciz  "\nThe line containeds %d letterrs\n"
+fmt7:   .asciz  "\nThe line containeds %d control characters\n"
+fmt8:   .asciz  "\nThe line containeds %d printable characters\n"
+fmt9:   .asciz  "\nThe line containeds %d characters\n"
+
+
+

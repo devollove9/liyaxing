@@ -1,0 +1,5 @@
+proj08:  proj08.support.s proj09.driver.o /user/cse320/lib/reglib.o
+	gcc proj09.support.s -o proj09 
+
+clean:
+	rm -f proj09 proj09.*.o
