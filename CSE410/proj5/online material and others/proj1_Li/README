@@ -1,0 +1,76 @@
+Student NetID: liyaxing, I am working on my own.
+Compilation tested on: ned, skinner, marge
+Command for compile: make
+
+--------------------------------------------------------------------------------------------------
+1. Just the monitor
+ >./proj1 -t 1
+Checking process activity every 1 seconds.
+Checking process....
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+liyaxing  5256  0.0  0.0  18156  2280 pts/3    Ss+  14:34   0:00 -csh
+liyaxing  5242  0.0  0.0  18156  2280 pts/2    Ss+  14:34   0:00 -csh
+liyaxing  5218  0.0  0.0  18160  2284 pts/0    Ss   14:34   0:00 -csh
+liyaxing  5532  0.0  0.0  11912   988 pts/0    S+   14:43   0:00  \_ ./proj1 -t 1
+liyaxing  5533  0.0  0.0   4176   580 pts/0    S+   14:43   0:00      \_ sh -c ps uf
+liyaxing  5537  0.0  0.0  15300  1208 pts/0    R+   14:43   0:00          \_ ps uf
+NO spinner process found..
+NO zombie process found..
+
+
+Checking process....
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+liyaxing  5256  0.0  0.0  18156  2280 pts/3    Ss+  14:34   0:00 -csh
+liyaxing  5242  0.0  0.0  18156  2280 pts/2    Ss+  14:34   0:00 -csh
+liyaxing  5218  0.0  0.0  18160  2284 pts/0    Ss   14:34   0:00 -csh
+liyaxing  5532  0.0  0.0  11912  1216 pts/0    S+   14:43   0:00  \_ ./proj1 -t 1
+liyaxing  5538  0.0  0.0   4176   576 pts/0    S+   14:43   0:00      \_ sh -c ps uf
+liyaxing  5539  0.0  0.0  15300  1208 pts/0    R+   14:43   0:00          \_ ps uf
+NO spinner process found..
+NO zombie process found..
+^CAre you sure you want to quit? (y/n)y
+Program terminated.
+
+
+----------------------------------------------------------------------------------------
+
+2. Just the monitor kill with n
+>./proj1 -t 10
+Checking process activity every 10 seconds.
+Checking process....
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+liyaxing  5256  0.0  0.0  18156  2280 pts/3    Ss+  14:34   0:00 -csh
+liyaxing  5242  0.0  0.0  18156  2280 pts/2    Ss+  14:34   0:00 -csh
+liyaxing  5218  0.0  0.0  18160  2284 pts/0    Ss   14:34   0:00 -csh
+liyaxing  5583  0.0  0.0  11912   988 pts/0    S+   14:45   0:00  \_ ./proj1 -t 10
+liyaxing  5587  0.0  0.0   4176   580 pts/0    S+   14:45   0:00      \_ sh -c ps uf
+liyaxing  5591  0.0  0.0  15300  1204 pts/0    R+   14:45   0:00          \_ ps uf
+NO spinner process found..
+NO zombie process found..
+
+
+Checking process....
+^CAre you sure you want to quit? (y/n)n
+Program Continues..
+
+
+
+Checking process....
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+liyaxing  5256  0.0  0.0  18156  2280 pts/3    Ss+  14:34   0:00 -csh
+liyaxing  5242  0.0  0.0  18156  2280 pts/2    Ss+  14:34   0:00 -csh
+liyaxing  5218  0.0  0.0  18160  2284 pts/0    Ss   14:34   0:00 -csh
+liyaxing  5583  0.0  0.0  11916  1216 pts/0    S+   14:45   0:00  \_ ./proj1 -t 10
+liyaxing  5595  0.0  0.0   4176   580 pts/0    S+   14:46   0:00      \_ sh -c ps uf
+liyaxing  5596  0.0  0.0  15300  1208 pts/0    R+   14:46   0:00          \_ ps uf
+NO spinner process found..
+NO zombie process found..
+
+
+Checking process....
+^CAre you sure you want to quit? (y/n)y
+Program terminated.
+
+------------------------------------------------------------------------------------------------
+
+3. monitor kills spinner

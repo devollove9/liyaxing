@@ -1,0 +1,9 @@
+http://www.cs.utah.edu/dept/old/texinfo/glibc-manual-0.02/library_21.html
+
+http://www.cplusplus.com/reference/csignal/signal/
+
+Changing default Signal handling in C (linux):
+http://bytes.com/topic/c/answers/719190-changing-default-signal-handling-c-linux
+
+IPC:Interrupts and Signals:
+http://www.cs.cf.ac.uk/Dave/C/node24.html

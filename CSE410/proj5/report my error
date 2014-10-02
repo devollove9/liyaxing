@@ -1,0 +1,13 @@
+    //report error
+    /*
+     * (gdb) run
+     * Starting program: /usr/bin/g++ 
+     * g++: fatal error: no input files
+     * compilation terminated.
+     * [Inferior 1 (process 8506) exited with code 04]
+     * /
+
+     
+     
+     Program received signal SIGSEGV, Segmentation fault.
+      0x0000000000401025 in main ()
